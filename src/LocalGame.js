@@ -27,7 +27,7 @@ const LocalGame = ({options}) => {
               <tr key={i}>
                 {x.map((y, j) => {
                   return (
-                    <td id={`[${i},${j}]`} key={j} onClick={add.bind(this)} className={`p-5 border-4 border-${game.players[game.turn]}-600 text-${game.game[i][j].player}-600`}>{y.mass}</td>
+                    <td id={`[${i},${j}]`} key={j} onClick={add.bind(this)} className={`p-5 border-4 border-${game.players[game.turn]}-600 text-${game.game[i][j].player}-600`}>{y.mass || ""}</td>
                   )
                 })}
               </tr>
