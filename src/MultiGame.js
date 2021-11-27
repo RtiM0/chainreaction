@@ -11,8 +11,6 @@ const MultiGame = ({options}) => {
       }
     },[socket,game]);
 
-    useEffect(()=>{console.log(options)},[options]);
-
     useEffect(()=>{
       socket.on("game", (game) => {
         setGame(game);
