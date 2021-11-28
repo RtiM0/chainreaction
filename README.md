@@ -2,9 +2,8 @@
 
 Recreating [Chain Reaction](https://play.google.com/store/apps/details?id=com.BuddyMattEnt.ChainReaction&hl=en_IN&gl=US) game.
 
-![](stills/1.png)
-
 # Installation
+
 - Front-end
   ```bash
   git clone https://github.com/RtiM0/chainreaction.git
@@ -19,15 +18,22 @@ Recreating [Chain Reaction](https://play.google.com/store/apps/details?id=com.Bu
   npm install
   node server.js
   ```
-- Change in ``chainreaction/src/socket.js``  ``line 4``for debug env:
+- Change in `chainreaction/src/socket.js` `line 4`for debug env:
   ```javascript
-  export const socket = socketio.connect('http://127.0.0.1:8080');
+  export const socket = socketio.connect("http://127.0.0.1:8080");
   ```
-- Change in ``chainreaction-api/server.js`` ``line8`` for debug env:
+- Change in `chainreaction-api/server.js` `line8` for debug env:
   ```javascript
-  const io = new Server(server, {cors: {origin: '*'}});
+  const io = new Server(server, { cors: { origin: "*" } });
   ```
-  
+
+# Stills
+
+|     Main Menu     | Online Multiplayer |
+| :---------------: | :----------------: |
+| ![](stills/2.png) | ![](stills/3.png)  |
+
+![](stills/1.png)
 
 # TODO
 
