@@ -39,22 +39,23 @@ const LocalGame = ({options}) => {
   
 
   return (
-    <div className="flex h-screen">
-      <table className={`m-auto border-collapse border-4 border-${game.players[game.turn]}-600 text-gray-300 font-extrabold text-2xl`}>
-        <thead><tr><th className="text-2xl p-1" colSpan={6}>Chain Reaction</th></tr></thead>
-        <tbody>{draw()}</tbody>
-        <tfoot></tfoot>
-      </table>
-      {/* for purgecss to include css */}
-      <div className="border-red-600 text-red-600 hidden"></div>
-      <div className="border-green-600 text-green-600 hidden"></div>
-      <div className="border-blue-600 text-blue-600 hidden"></div>
-      <div className="border-yellow-600 text-yellow-600 hidden"></div>
-      <div className="border-pink-600 text-pink-600 hidden"></div>
-      <div className="border-indigo-600 text-indigo-600 hidden"></div>
-      <div className="border-purple-600 text-purple-600 hidden"></div>
-      <div className="border-gray-600 text-gray-600 hidden"></div>
-    </div>
+    <>
+    {game.players.length>1?
+      <div className="flex h-screen">
+        <table className={`m-auto border-collapse border-4 border-${game.players[game.turn]}-600 text-gray-300 font-extrabold text-2xl`}>
+          <thead><tr><th className="text-2xl p-1" colSpan={6}>Chain Reaction</th></tr></thead>
+          <tbody>{draw()}</tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    :
+      <div className={`border-${game.players[0]}-600 border-4 rounded-sm w-screen md:w-auto h-full md:h-auto flex flex-col justify-center p-8 bg-black bg-opacity-50`}>
+        <h1 className="text-5xl p-8 font-bold flex justify-center text-green-600">GAME OVER</h1>
+        <h1 className={`col-span-4 text-lg text-${game.players[0]}-600`}>{game.players[0].toUpperCase()} WON</h1>
+        <button onClick={() => {window.location.reload()}} className={`bg-green-600 bg-opacity-50 hover:bg-opacity-100 mt-16 py-2 rounded-sm`}>Return to Main Menu</button>
+      </div>  
+    }
+    </>
   );
 }
 

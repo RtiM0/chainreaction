@@ -43,6 +43,15 @@ const App = () => {
               </div>
             </div>
         }
+        {/* for purgecss to include css */}
+        <div className="border-red-600 text-red-600 hidden"></div>
+        <div className="border-green-600 text-green-600 hidden"></div>
+        <div className="border-blue-600 text-blue-600 hidden"></div>
+        <div className="border-yellow-600 text-yellow-600 hidden"></div>
+        <div className="border-pink-600 text-pink-600 hidden"></div>
+        <div className="border-indigo-600 text-indigo-600 hidden"></div>
+        <div className="border-purple-600 text-purple-600 hidden"></div>
+        <div className="border-gray-600 text-gray-600 hidden"></div>
       </div>
     </SocketContext.Provider>
     );

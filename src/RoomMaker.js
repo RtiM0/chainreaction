@@ -45,7 +45,7 @@ const RoomMaker = () => {
                 <>
                     <h1 className="col-span-4 text-lg text-green-600">ROOM ID: <span className="font-mono text-white">{roomId}</span></h1>
                     <div className="col-span-4 text-lg">Joined users:{players.map((element, index)=>{return (<p key={element.name} className={`text-${element.color}-600`}>{element.name===socket.id?` Player ${index+1} (You)`:`Player ${index+1}`}</p>)})}</div>
-                    {players.findIndex(e => e.name===socket.id)===0?<button onClick={()=>{startGame();}} className="bg-green-600 p-2 col-start-2 col-span-2 text-md">Play</button>:<p className="col-span-4"> Waiting for Player 1 to start the game...</p>}
+                    {players.findIndex(e => e.name===socket.id)===0?players.length>1?<button onClick={()=>{startGame();}} className="bg-green-600 p-2 col-start-2 col-span-2 text-md">Play</button>:<p className="col-span-4">Waiting for more players to join...</p>:<p className="col-span-4"> Waiting for Player 1 to start the game...</p>}
                 </>
             :
                 <>
